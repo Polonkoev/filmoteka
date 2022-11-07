@@ -1,4 +1,6 @@
 import Pagination from 'tui-pagination';
+// import ApiService from '../fetch';
+// import { markupMovies } from '../card_markup';
 // import {Spinner} from 'spin.js';
 
 const container = document.getElementById('tui-pagination-container');
@@ -17,13 +19,28 @@ const pagination = new Pagination(container, options);
   .then(response => response.json())
   .then(json => console.log(json))
 
-pagination.on('afterMove', (event) => {
-  const currentPage = event.page;
-  fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=9a9abe516901ea117e86ba92a0d908e2&page=${currentPage}`)
-  .then(response => response.json())
-  .then(json => console.log(json))
-  console.log('currentPage:', currentPage);
-})
+// function handleSucces(data) {
+//   const movies = data.results;
+//   console.log(movies);
+//   markupMovies(movies);
+// }
+
+// function handleError(error) {
+//   console.error(error);
+// }
+
+// pagination.on('afterMove', (event) => {
+//   document.querySelector('.movieList').reset();
+//   const fetchApi = new ApiService({
+//     page: event.page,
+//   });
+//   fetchApi.fetchTrendMovies().then(handleSucces).catch(handleError);
+//   // fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=9a9abe516901ea117e86ba92a0d908e2&page=${currentPage}`)
+//   // .then(response => response.json())
+//   // .then(json => console.log(json))
+//   // console.log('currentPage:', );
+// })
+
 
 
 // SPINNER //
