@@ -1,0 +1,1 @@
+import './js/about_modal/aboutModal.js'
