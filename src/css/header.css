@@ -1,0 +1,292 @@
+.header-container {
+  max-width: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+/* фоновое изображение мобильная версия */
+.header {
+  padding-bottom: 92px;
+  padding-top: 42px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../images/main-header/main-header-background-mobile@1x.jpg');
+}
+
+/* фоновое изображение планшет */
+@media screen and (min-width: 768px) {
+  .header {
+    padding-bottom: 80px;
+    background-image: url('../images/main-header/main-header-background-tablet@1x.jpg');
+  }
+}
+
+/* фоновое изображение десктоп */
+@media screen and (min-width: 1280px) {
+  .header {
+    background-image: url('../images/main-header/main-header-background-desktop@1x.jpg');
+  }
+}
+
+/* retina десктоп*/
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header {
+    background-image: url('../images/main-header/main-header-background-desktop@2x.jpg');
+  }
+}
+
+/* retina планшет*/
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header {
+    background-image: url('../images/main-header/main-header-background-tablet@2x.jpg');
+  }
+}
+
+/* retina мобильная версия*/
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header {
+    background-image: url('../images/main-header/main-header-background-mobile@2x.jpg');
+  }
+}
+
+.logo {
+  align-items: center;
+  display: inline-flex;
+  gap: 12px;
+}
+.logo:hover,
+.logo:focus {
+  animation: ScaleBig 2000ms linear;
+}
+
+@keyframes ScaleBig {
+  0% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(120%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+.logo-title {
+  display: none;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.16;
+}
+
+
+/*NAV*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+/*NAVIGATION LINKS*/
+.link {
+  color: #fff;
+  cursor: pointer;
+}
+.nav-link {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16px;
+  font-family: Roboto, sans-serif;
+  position: relative;
+  padding: 3px;
+}
+.nav-title {
+  padding: 3px;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+.nav-title::before,
+.nav-title::after {
+  content: '';
+  width: 2px;
+  height: 0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+.nav-link:hover::before,
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link:hover .nav-title::before,
+.nav-link:hover .nav-title::after {
+  height: 100%;
+}
+
+.nav-link::after {
+  left: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+.nav-link .nav-title::after {
+  right: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.nav-link::before {
+  right: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.nav-link .nav-title::before {
+  left: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+
+
+.nav .nav-link.current-link::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #ff001b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* поисковик */
+.search-form {
+  width: 280px;
+  margin: 60px auto 0;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #fff;
+  outline: none;
+  display: block;
+  transition: all 0.2s linear;
+}
+
+.search-input::placeholder {
+  color: #ffffff;
+  transition: all 0.2s linear;
+}
+
+.search-form:hover .search-input,
+.search-form:focus .search-input {
+  border-color: #ff6b01;
+}
+
+.search-form:hover .search-input::placeholder,
+.search-form:focus .search-input::placeholder {
+  color: #ff6b01;
+}
+
+.search-icon{
+  stroke: #ffffff;
+  transition: all 0.2s linear;
+}
+
+.search-form:hover .search-icon{
+  stroke:#ff6b01;
+}
+
+
+.submit-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+
+/* Планшет */
+@media screen and (min-width: 768px) {
+  .header-container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-title {
+    display: block;
+  }
+
+  .search-form {
+    margin-top: 40px;
+  }
+}
+
+/* Десктоп */
+@media screen and (min-width: 1280px) {
+  .header-container {
+    max-width: 1280px;
+  }
+
+  .search-form {
+    margin-top: 61px;
+  }
+}
+
+/*ARROWUP*/
+.arrow-up-icon {
+  display: inline-block;
+}
+.arrow-up-btn {
+  border-radius: 50%;
+  background-color: #ff6b01;
+  width: 40px;
+  height: 40px;
+  border: none;
+  box-shadow: 0px 1px 5px #303030;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.arrow-up-btn:hover,
+.arrow-up-btn:focus {
+  animation: ScaleBig 2000ms linear;
+}
+
+.arrow-up-btn-visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
