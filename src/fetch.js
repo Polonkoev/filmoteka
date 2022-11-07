@@ -9,8 +9,7 @@ export default class ApiService {
   // трендовые фильмы //
   async fetchTrendMovies() {
     try {
-      const url =
-        'https://api.themoviedb.org/3/trending/movie/day?${this.key}&page=${this.page}';
+      const url = `https://api.themoviedb.org/3/trending/movie/day?${this.key}&page=${this.page}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -20,8 +19,7 @@ export default class ApiService {
   //поиск по ключевому слову //
   async fetchByKeyWord() {
     try {
-      const url =
-        'https://api.themoviedb.org/3/search/movie?${this.key}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false';
+      const url = `https://api.themoviedb.org/3/search/movie?${this.key}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
