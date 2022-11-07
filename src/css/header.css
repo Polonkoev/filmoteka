@@ -178,6 +178,7 @@
   right: 0;
 }
 
+/* поисковик */
 .search-form {
   width: 280px;
   margin: 60px auto 0;
@@ -197,12 +198,28 @@
 
 .search-input::placeholder {
   color: #ffffff;
+  transition: all 0.2s linear;
 }
 
-.search-input:hover,
-.search-input:focus {
-  border-color: #ff001b;
+.search-form:hover .search-input,
+.search-form:focus .search-input {
+  border-color: #ff6b01;
 }
+
+.search-form:hover .search-input::placeholder,
+.search-form:focus .search-input::placeholder {
+  color: #ff6b01;
+}
+
+.search-icon{
+  stroke: #ffffff;
+  transition: all 0.2s linear;
+}
+
+.search-form:hover .search-icon{
+  stroke:#ff6b01;
+}
+
 
 .submit-button {
   position: absolute;
@@ -212,6 +229,7 @@
   outline: none;
   background-color: transparent;
 }
+
 
 /* Планшет */
 @media screen and (min-width: 768px) {
@@ -227,13 +245,7 @@
   }
 
   .logo-title {
-    margin-left: 10px;
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #ffffff;
+    display: block;
   }
 
   .search-form {
