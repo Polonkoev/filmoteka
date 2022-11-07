@@ -1,0 +1,197 @@
+.is-hidden {
+  display: none;
+}
+.modal-window {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  position: relative;
+  z-index: 500;
+  margin: 0 auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  stroke: #000;
+  cursor: pointer;
+}
+.modal-close:hover {
+  stroke: #ff6801;
+}
+
+.cinema-card {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.cinema-card img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+.overlay-scroll {
+  overflow: auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  height: 100vh;
+}
+
+.modal-window {
+  width: 280px;
+  padding: 48px 20px 40px 20px;
+  background-color: #fff;
+}
+
+.cinema-card {
+  margin-bottom: 20px;
+}
+
+.card-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-title {
+  font-size: 20px;
+  line-height: 1.15;
+  color: black;
+}
+
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filter-item {
+  display: flex;
+}
+
+.text-description {
+  font-size: 12px;
+  line-height: 1.3;
+  width: 50%;
+  color: #8c8c8c;
+}
+.text-field {
+  width: 50%;
+  font-size: 12px;
+  line-height: 1.16;
+}
+
+.text-filed-rate {
+  color: #fff;
+  border-radius: 5px;
+  background-color: #ff6801;
+  padding: 1px 10px;
+  font-size: 12px;
+  line-height: 1.16;
+}
+.text-title {
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+
+.text-content {
+  font-size: 12px;
+  line-height: 1.66;
+}
+
+.card-button {
+  display: flex;
+  gap: 20px;
+}
+.card-btn {
+  width: 50%;
+  background-color: #fff;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  border-radius: 5px;
+  height: 44px;
+}
+
+.card-btn-bg {
+  background-color: #ff6801;
+  color: #fff;
+}
+
+.card-btn-border {
+  border: 1px solid #000;
+  color: #000;
+}
+
+@media screen and (min-width: 768px) {
+  .overlay-scroll {
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    align-items: center;
+  }
+
+  .modal-window {
+    width: 704px;
+    display: flex;
+    padding-top: 40px;
+    padding-left: 36px;
+    padding-right: 72px;
+    padding-bottom: 40px;
+    gap: 68px;
+  }
+
+  .cinema-card {
+    margin-bottom: 0;
+    width: 264px;
+    flex-shrink: 0;
+  }
+
+  .filter-list {
+    width: 215px;
+  }
+
+  .card-button {
+    width: 270px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .modal-window {
+    width: 806px;
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 16px;
+  }
+
+  .cinema-card {
+    width: 375px;
+  }
+
+  .filter-list {
+    width: 259px;
+  }
+
+  .card-button {
+    width: 287px;
+    gap: 15px;
+    padding-left: 8px;
+  }
+
+  .card-title {
+    font-size: 30px;
+    line-height: 1.16;
+  }
+}

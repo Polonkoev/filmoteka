@@ -1,8 +1,6 @@
-.container {
-  outline: 1px solid red;
-}
 .visually-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
+
