@@ -1,10 +1,11 @@
-const galleryEl = document.querySelector('.movieList')
+const galleryEl = document.querySelector('.movieList');
 import { findGenresOfMovie } from './ganres';
 import img from './images/film_poster_not_found.jpg';
+import styles from './css/movie-cards.css';
 
 export function markupMovies(movies) {
   const markup = movies
-    .map((data) => {
+    .map(data => {
       const { poster_path, title, genre_ids, release_date, id } = data;
       const movieData = JSON.stringify(data);
       const date = new Date(release_date).getFullYear();
