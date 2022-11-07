@@ -1,7 +1,8 @@
+const galleryEl = document.querySelector('.movieList')
 import { findGenresOfMovie } from './ganres';
 import img from './images/film_poster_not_found.jpg';
 
-function markupMovies(movies) {
+export function markupMovies(movies) {
   const markup = movies
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
       const date = new Date(release_date).getFullYear();

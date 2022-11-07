@@ -1,5 +1,5 @@
 import ApiService from './fetch';
-
+import { markupMovies } from './card_markup';
 const fetchApi = new ApiService();
 fetchApi.fetchTrendMovies().then(handleSucces).catch(handleError);
 

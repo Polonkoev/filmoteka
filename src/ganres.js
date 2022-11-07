@@ -1,6 +1,6 @@
-{
-  'genres'[
-    ({ id: 28, name: 'Action' },
+
+  const genres = [
+    { id: 28, name: 'Action' },
     { id: 12, name: 'Adventure' },
     { id: 16, name: 'Animation' },
     { id: 35, name: 'Comedy' },
@@ -18,9 +18,9 @@
     { id: 10770, name: 'TV Movie' },
     { id: 53, name: 'Thriller' },
     { id: 10752, name: 'War' },
-    { id: 37, name: 'Western' })
+    { id: 37, name: 'Western' }
   ];
-}
+
 
 export function findGenresOfMovie(ids) {
   const arr = ids.flatMap(id => genres.filter(element => element.id === id));
