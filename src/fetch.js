@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 export default class ApiService {
-  constructor() {
+  constructor(opt) {
     this.searchQuery = '';
-    this.page = 1;
+    this.page = opt.page;
     this.key = 'api_key=894a5fcb5eb3af426933275e70f0cd83';
   }
   // трендовые фильмы //
