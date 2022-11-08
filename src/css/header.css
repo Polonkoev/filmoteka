@@ -5,9 +5,11 @@
   margin: 0 auto;
 }
 
+
 /* фоновое изображение мобильная версия */
 .header {
-  padding-bottom: 92px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-mobile@1x.jpg');
+  /* padding-bottom: 92px;
   padding-top: 42px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -62,7 +64,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/main-header/main-header-background-mobile@2x.jpg');
   }
-}
+
 
 .logo {
   align-items: center;
