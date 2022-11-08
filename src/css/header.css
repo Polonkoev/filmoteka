@@ -5,28 +5,43 @@
   margin: 0 auto;
 }
 
+
 /* фоновое изображение мобильная версия */
 .header {
-  padding-bottom: 92px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-mobile@1x.jpg');
+  /* padding-bottom: 92px;
   padding-top: 42px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../images/main-header/main-header-background-mobile@1x.jpg');
+  background-color: #303030; */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 230px;
+  background-position-x: 20%;
+  background-position-y: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #303030;
+  padding-top: 44px;
 }
 
 /* фоновое изображение планшет */
 @media screen and (min-width: 768px) {
   .header {
     padding-bottom: 80px;
-    background-image: url('../images/main-header/main-header-background-tablet@1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-tablet@1x.jpg');
+    height: 219px;
   }
 }
 
 /* фоновое изображение десктоп */
 @media screen and (min-width: 1280px) {
   .header {
-    background-image: url('../images/main-header/main-header-background-desktop@1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-desktop@1x.jpg');
+    height: 216px;
+
   }
 }
 
@@ -35,7 +50,8 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .header {
-    background-image: url('../images/main-header/main-header-background-desktop@2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-desktop@2x.jpg');
+
   }
 }
 
@@ -44,7 +60,7 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .header {
-    background-image: url('../images/main-header/main-header-background-tablet@2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-tablet@2x.jpg');
   }
 }
 
@@ -53,8 +69,8 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .header {
-    background-image: url('../images/main-header/main-header-background-mobile@2x.jpg');
-  }
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-mobile@2x.jpg');
+    }
 }
 
 .logo {
@@ -249,7 +265,8 @@
   }
 
   .search-form {
-    margin-top: 40px;
+    width: 336px;
+    margin: 52px auto 0;
   }
 }
 
@@ -260,7 +277,8 @@
   }
 
   .search-form {
-    margin-top: 61px;
+    width: 394px;
+    margin: 53px auto 0;
   }
 }
 
