@@ -12,21 +12,25 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../images/main-header/main-header-background-mobile@1x.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/main-header/main-header-background-mobile@1x.jpg');
+  opacity: 0.9;
 }
 
 /* фоновое изображение планшет */
 @media screen and (min-width: 768px) {
   .header {
     padding-bottom: 80px;
-    background-image: url('../images/main-header/main-header-background-tablet@1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/main-header/main-header-background-tablet@1x.jpg');
   }
 }
 
 /* фоновое изображение десктоп */
 @media screen and (min-width: 1280px) {
   .header {
-    background-image: url('../images/main-header/main-header-background-desktop@1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/main-header/main-header-background-desktop@1x.jpg');
   }
 }
 
@@ -35,7 +39,8 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .header {
-    background-image: url('../images/main-header/main-header-background-desktop@2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/main-header/main-header-background-desktop@2x.jpg');
   }
 }
 
@@ -44,7 +49,8 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .header {
-    background-image: url('../images/main-header/main-header-background-tablet@2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/main-header/main-header-background-tablet@2x.jpg');
   }
 }
 
@@ -53,7 +59,8 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .header {
-    background-image: url('../images/main-header/main-header-background-mobile@2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/main-header/main-header-background-mobile@2x.jpg');
   }
 }
 
@@ -87,7 +94,6 @@
   font-size: 30px;
   line-height: 1.16;
 }
-
 
 /*NAV*/
 .nav {
@@ -166,7 +172,6 @@
   transition-duration: 0.4s;
 }
 
-
 .nav .nav-link.current-link::after {
   content: '';
   width: 100%;
@@ -211,15 +216,14 @@
   color: #ff6b01;
 }
 
-.search-icon{
+.search-icon {
   stroke: #ffffff;
   transition: all 0.2s linear;
 }
 
-.search-form:hover .search-icon{
-  stroke:#ff6b01;
+.search-form:hover .search-icon {
+  stroke: #ff6b01;
 }
-
 
 .submit-button {
   position: absolute;
@@ -229,7 +233,6 @@
   outline: none;
   background-color: transparent;
 }
-
 
 /* Планшет */
 @media screen and (min-width: 768px) {
@@ -249,7 +252,7 @@
   }
 
   .search-form {
-    margin-top: 40px;
+    margin: 40px auto 0;
   }
 }
 
@@ -257,10 +260,6 @@
 @media screen and (min-width: 1280px) {
   .header-container {
     max-width: 1280px;
-  }
-
-  .search-form {
-    margin-top: 61px;
   }
 }
 
