@@ -1,4 +1,5 @@
 <div class="overlay is-hidden">
+  <div class="overlay-bg"></div>
   <div class="overlay-scroll">
     <div class="modal-window">
       <div class="modal-close">
@@ -26,26 +27,26 @@
           <div class="filter-item">
             <p class="text-description">Vote / Votes</p>
             <p class="text-field">
-              <span class="text-filed-rate">7.3</span> /
-              <span class="text-field-total">1260</span>
+              <span class="text-filed-rate" id="modal-vote">7.3</span> /
+              <span class="text-field-total" id="modal-votes">1260</span>
             </p>
           </div>
           <div class="filter-item">
             <p class="text-description">Popularity</p>
-            <p class="text-field">100.2</p>
+            <p class="text-field" id="modal-popularity">100.2</p>
           </div>
           <div class="filter-item">
             <p class="text-description">Original Title</p>
-            <p class="text-field">A FISTFUL OF LEAD</p>
+            <p class="text-field" id="modal-original">A FISTFUL OF LEAD</p>
           </div>
           <div class="filter-item">
             <p class="text-description">Genre</p>
-            <p class="text-field">Western</p>
+            <p class="text-field" id="modal-genre">Western</p>
           </div>
         </div>
         <div class="card-descriotion">
           <p class="text-title">About</p>
-          <p class="text-content">
+          <p class="text-content" id="modal-content">
             Four of the West’s most infamous outlaws assemble to steal a huge
             stash of gold from the most corrupt settlement of the gold rush
             towns. But not all goes to plan one is killed and the other three
@@ -59,6 +60,9 @@
         <div class="card-button">
           <button class="card-btn card-btn-bg" type="submit">
             add to Watched
+          </button>
+          <button class="card-btn card-btn-delete" type="submit">
+            delete from Watched
           </button>
           <button class="card-btn card-btn-border" type="submit">
             add to queue

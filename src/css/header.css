@@ -5,57 +5,28 @@
   margin: 0 auto;
 }
 
-/* фоновое изображение мобильная версия */
 .header {
-  padding-bottom: 92px;
-  padding-top: 42px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../images/main-header/main-header-background-mobile@1x.jpg');
-}
-
-/* фоновое изображение планшет */
-@media screen and (min-width: 768px) {
-  .header {
-    padding-bottom: 80px;
-    background-image: url('../images/main-header/main-header-background-tablet@1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-mobile@1x.jpg');  
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 230px;
+    background-position-x: 20%;
+    background-position-y: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #303030;
+    padding-top: 44px;
+    opacity: 0.9;
   }
-}
 
-/* фоновое изображение десктоп */
-@media screen and (min-width: 1280px) {
-  .header {
-    background-image: url('../images/main-header/main-header-background-desktop@1x.jpg');
-  }
-}
-
-/* retina десктоп*/
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .header {
-    background-image: url('../images/main-header/main-header-background-desktop@2x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/main-header/main-header-background-mobile@2x.jpg');
   }
-}
-
-/* retina планшет*/
-@media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .header {
-    background-image: url('../images/main-header/main-header-background-tablet@2x.jpg');
   }
-}
-
-/* retina мобильная версия*/
-@media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .header {
-    background-image: url('../images/main-header/main-header-background-mobile@2x.jpg');
-  }
-}
 
 .logo {
   align-items: center;
@@ -87,7 +58,6 @@
   font-size: 30px;
   line-height: 1.16;
 }
-
 
 /*NAV*/
 .nav {
@@ -166,7 +136,6 @@
   transition-duration: 0.4s;
 }
 
-
 .nav .nav-link.current-link::after {
   content: '';
   width: 100%;
@@ -211,15 +180,14 @@
   color: #ff6b01;
 }
 
-.search-icon{
+.search-icon {
   stroke: #ffffff;
   transition: all 0.2s linear;
 }
 
-.search-form:hover .search-icon{
-  stroke:#ff6b01;
+.search-form:hover .search-icon {
+  stroke: #ff6b01;
 }
-
 
 .submit-button {
   position: absolute;
@@ -233,10 +201,29 @@
 
 /* Планшет */
 @media screen and (min-width: 768px) {
+  .logo-title {
+    display: block;
+  }
+
   .header-container {
     max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+  }
+
+  .header {
+    padding-bottom: 80px;
+    background-image: url('../images/main-header/main-header-background-tablet@1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-tablet@1x.jpg');
+    height: 219px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/main-header/main-header-background-tablet@2x.jpg');
   }
 
   .logo {
@@ -244,14 +231,13 @@
     align-items: center;
   }
 
-  .logo-title {
-    display: block;
-  }
-
   .search-form {
-    margin-top: 40px;
+    width: 336px;
+    margin: 40px auto 0;
   }
 }
+}
+
 
 /* Десктоп */
 @media screen and (min-width: 1280px) {
@@ -259,10 +245,25 @@
     max-width: 1280px;
   }
 
-  .search-form {
-    margin-top: 61px;
+  .header {
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/main-header/main-header-background-desktop@1x.jpg');
+    height: 216px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/main-header/main-header-background-desktop@2x.jpg');
   }
 }
+
+.search-form {
+  width: 394px;
+}
+}
+
 
 /*ARROWUP*/
 .arrow-up-icon {
