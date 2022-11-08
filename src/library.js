@@ -1,6 +1,4 @@
 import './arrowup.js';
-
-import './arrowup.js';
 import { findGenresOfMovie } from './ganres';
 
 const movieList = document.querySelector('.movieList');
