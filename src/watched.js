@@ -14,6 +14,7 @@ export function clickOnWatchedBtn(e) {
   const dataParsed = JSON.parse(data);
   watchedEl.style.display = 'none';
   deleteEl.style.display = 'block';
+
   let array;
   if (data) {
     const find = dataParsed.find(el => el.id == JSON.parse(movieData).id);
@@ -36,6 +37,9 @@ export function clickOnWatchedBtn(e) {
     const newDataParsed = JSON.parse(newdData);
     watchedList.innerHTML = '';
     markupMovies(newDataParsed, watchedList);
+
+    const plug = document.querySelector('.no-movie');
+    plug.style.display = 'none';
   }
 }
 
