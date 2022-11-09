@@ -4,25 +4,45 @@ const movieList = document.querySelector('.movieList');
 const overlay = document.querySelector('.overlay');
 const closeOverlay = document.querySelector('.modal-close');
 const overlayBg = document.querySelector('.overlay-bg');
-
 const imgCard = document.querySelector('.cinema-card img');
 const cardTitle = document.querySelector('.card-title');
-
 const cardVote = document.querySelector('#modal-vote');
 const cardVotes = document.querySelector('#modal-votes');
 const cardPopularity = document.querySelector('#modal-popularity');
 const cardOriginal = document.querySelector('#modal-original');
 const cardGenre = document.querySelector('#modal-genre');
 const cardContent = document.querySelector('#modal-content');
-
-// --------------------- //
 const cardBlock = document.querySelector('.card-block');
-const watchedEl = document.querySelector('.card-btn-bg');
+const watchedEl = document.querySelector('#addToWatchedBtn');
 const deleteEl = document.querySelector('.card-btn-delete');
+const queuedEl = document.querySelector('#addToQueuedBtn');
+const deleteQEl = document.querySelector('.card-btn-delete-queued');
 
-// --------------------- //
+export {
+  movieList,
+  overlay,
+  closeOverlay,
+  overlayBg,
+  imgCard,
+  cardTitle,
+  cardVote,
+  cardVotes,
+  cardPopularity,
+  cardOriginal,
+  cardGenre,
+  cardContent,
+  cardBlock,
+  watchedEl,
+  queuedEl,
+  deleteQEl,
+  deleteEl,
+  openModal,
+  modalClose,
+};
 
-movieList.addEventListener('click', function (e) {
+movieList.addEventListener('click', openModal);
+
+function openModal(e) {
   const movie = e.target.closest('.movieCard');
   if (movie) {
     overlay.classList.remove('is-hidden');
@@ -45,20 +65,32 @@ movieList.addEventListener('click', function (e) {
 
     cardBlock.dataset.movie = movie.dataset.movie;
 
-    const data = localStorage.getItem('watched');
-    const dataParsed = JSON.parse(data);
+    const dataWatched = localStorage.getItem('watched');
+    const dataQueued = localStorage.getItem('queued');
+    const dataWatchedParsed = JSON.parse(dataWatched);
+    const dataQueuedParsed = JSON.parse(dataQueued);
 
-    const find = dataParsed.find(el => el.id == movieData.id);
-    console.log('find', find);
-    if (find) {
+    const findWatched = dataWatchedParsed.find(el => el.id == movieData.id);
+    const findQueued = dataQueuedParsed.find(el => el.id == movieData.id);
+
+    console.log('find', findWatched);
+    if (findWatched) {
       watchedEl.style.display = 'none';
       deleteEl.style.display = 'block';
     } else {
       watchedEl.style.display = 'block';
       deleteEl.style.display = 'none';
     }
+
+    if (findQueued) {
+      queuedEl.style.display = 'none';
+      deleteQEl.style.display = 'block';
+    } else {
+      queuedEl.style.display = 'block';
+      deleteQEl.style.display = 'none';
+    }
   }
-});
+}
 
 closeOverlay.addEventListener('click', modalClose);
 overlayBg.addEventListener('click', modalClose);

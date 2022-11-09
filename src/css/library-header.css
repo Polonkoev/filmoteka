@@ -192,6 +192,18 @@
   border-radius: 5px;
   border: none;
 }
+.library-queued-btn-link {
+  font-style: normal;
+  font-weight: 500;
+  /* font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.02em; */
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 13px;
+  text-align: center;
+}
 
 /*ADOPTIVE*/
 @media screen and (min-device-pixel-ratio: 2),

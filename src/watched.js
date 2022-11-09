@@ -1,16 +1,19 @@
-const watchedEl = document.querySelector('.card-btn-bg');
+import { markupMovies } from './card_markup';
+import * as modal from './js/modal-window.js';
+
+const watchedEl = document.querySelector('#addToWatchedBtn');
 const deleteEl = document.querySelector('.card-btn-delete');
+const watchedList = document.querySelector('.watched-list');
 
 watchedEl.addEventListener('click', clickOnWatchedBtn);
 
-function clickOnWatchedBtn(e) {
+export function clickOnWatchedBtn(e) {
   const movie = e.target.closest('.card-block');
   const movieData = movie.dataset.movie;
   const data = localStorage.getItem('watched');
   const dataParsed = JSON.parse(data);
   watchedEl.style.display = 'none';
   deleteEl.style.display = 'block';
-
   let array;
   if (data) {
     const find = dataParsed.find(el => el.id == JSON.parse(movieData).id);
@@ -19,22 +22,26 @@ function clickOnWatchedBtn(e) {
     }
     if (Array.isArray(dataParsed)) {
       array = dataParsed;
-    } else {
-      array = [dataParsed];
+      array.push(JSON.parse(movieData));
+      localStorage.setItem('watched', JSON.stringify(array));
     }
-    array.push(JSON.parse(movieData));
-    localStorage.setItem('watched', JSON.stringify(array));
   } else {
     const parsedMovie = JSON.parse(movieData);
     array = [parsedMovie];
-    console.log(array);
     localStorage.setItem('watched', JSON.stringify(array));
+  }
+
+  if (watchedList) {
+    const newdData = localStorage.getItem('watched');
+    const newDataParsed = JSON.parse(newdData);
+    watchedList.innerHTML = '';
+    markupMovies(newDataParsed, watchedList);
   }
 }
 
 deleteEl.addEventListener('click', clickOnDeleteWatchedBtn);
 
-function clickOnDeleteWatchedBtn(e) {
+export function clickOnDeleteWatchedBtn(e) {
   const movie = e.target.closest('.card-block');
   const movieData = movie.dataset.movie;
   const data = localStorage.getItem('watched');
@@ -45,9 +52,10 @@ function clickOnDeleteWatchedBtn(e) {
   const filtered = dataParsed.filter(el => el.id != JSON.parse(movieData).id);
   localStorage.setItem('watched', JSON.stringify(filtered));
 
-  //   const newdData = localStorage.getItem('watched');
-  //   const newDataParsed = JSON.parse(newdData);
-
-  //   watchedList.innerHTML = '';
-  //   markupMovies(newDataParsed);
+  if (watchedList) {
+    const newdData = localStorage.getItem('watched');
+    const newDataParsed = JSON.parse(newdData);
+    watchedList.innerHTML = '';
+    markupMovies(newDataParsed, watchedList);
+  }
 }

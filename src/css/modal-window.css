@@ -130,14 +130,30 @@
 .card-btn {
   width: 50%;
   background-color: #fff;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
   text-transform: uppercase;
   border-radius: 5px;
   height: 44px;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.card-btn:hover,
+.card-btn:focus {
+  background-color: #ff6801;
+  color: #fff;
+  border-style: none;
 }
 
 .card-btn-delete {
+  display: none;
+  background-color: #ff6801;
+  color: #fff;
+}
+
+.card-btn-delete-queued {
   display: none;
   background-color: #ff6801;
   color: #fff;
