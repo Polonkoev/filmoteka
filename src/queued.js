@@ -56,5 +56,10 @@ export function clickOnDeleteQueuedBtn(e) {
     const newDataParsed = JSON.parse(newdData);
     queuedList.innerHTML = '';
     markupMovies(newDataParsed, queuedList);
+
+    if (newDataParsed.length === 0) {
+      const plug = document.querySelector('.no-movie');
+      plug.style.display = 'block';
+    }
   }
 }
