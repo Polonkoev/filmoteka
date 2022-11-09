@@ -1,6 +1,7 @@
 import { fetchApi } from './fetch';
 import { markupMovies } from './card_markup';
 import { resetPagination } from './js/pagination';
+import Notiflix from 'notiflix';
 
 const searchFormEl = document.querySelector('.search-form');
 console.log(searchFormEl);
@@ -23,6 +24,9 @@ async function onSearch(event) {
     const films = response.results;
 
     if (films.length === 0) {
+      Notiflix.Notify.init({ width: '550px', position: 'right-top' });
+      Notiflix.Notify.failure('Sorry, there is no movie with that name');
+      searchFormEl.reset();
       return;
     }
 
