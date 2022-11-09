@@ -10,14 +10,18 @@ import { clickOnWatchedBtn, clickOnDeleteWatchedBtn } from './watched';
 const queuedList = document.querySelector('.queued-list');
 const queuedEl = document.querySelector('#addToQueuedBtn');
 const deleteQEl = document.querySelector('#removeFromQueuedBtn');
+const plug = document.querySelector('.no-movie');
 
 const data = localStorage.getItem('queued');
 const dataParsed = JSON.parse(data);
 
 console.log(dataParsed);
 
-if (dataParsed) {
+if (!dataParsed || dataParsed.length === 0) {
+  plug.style.display = 'block';
+} else {
   markupMovies(dataParsed, queuedList);
+  plug.style.display = 'none';
 }
 
 queuedEl.addEventListener('click', clickOnQueuedBtn);

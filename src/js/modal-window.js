@@ -70,24 +70,26 @@ function openModal(e) {
     const dataWatchedParsed = JSON.parse(dataWatched);
     const dataQueuedParsed = JSON.parse(dataQueued);
 
-    const findWatched = dataWatchedParsed.find(el => el.id == movieData.id);
-    const findQueued = dataQueuedParsed.find(el => el.id == movieData.id);
-
-    console.log('find', findWatched);
-    if (findWatched) {
-      watchedEl.style.display = 'none';
-      deleteEl.style.display = 'block';
-    } else {
-      watchedEl.style.display = 'block';
-      deleteEl.style.display = 'none';
+    if (dataWatchedParsed) {
+      const findWatched = dataWatchedParsed.find(el => el.id == movieData.id);
+      if (findWatched) {
+        watchedEl.style.display = 'none';
+        deleteEl.style.display = 'block';
+      } else {
+        watchedEl.style.display = 'block';
+        deleteEl.style.display = 'none';
+      }
     }
 
-    if (findQueued) {
-      queuedEl.style.display = 'none';
-      deleteQEl.style.display = 'block';
-    } else {
-      queuedEl.style.display = 'block';
-      deleteQEl.style.display = 'none';
+    if (dataQueuedParsed) {
+      const findQueued = dataQueuedParsed.find(el => el.id == movieData.id);
+      if (findQueued) {
+        queuedEl.style.display = 'none';
+        deleteQEl.style.display = 'block';
+      } else {
+        queuedEl.style.display = 'block';
+        deleteQEl.style.display = 'none';
+      }
     }
   }
 }
