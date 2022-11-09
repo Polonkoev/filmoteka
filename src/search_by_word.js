@@ -1,37 +1,36 @@
-import { fetchApi } from './fetch';
-import { markupMovies } from './card_markup';
-import { resetPagination } from './js/pagination';
+// import { fetchApi } from './fetch';
+// import { markupMovies } from './card_markup';
+// import { resetPagination } from './js/pagination';
 
-const searchFormEl = document.querySelector('.search-form');
-console.log(searchFormEl);
-searchFormEl.addEventListener('submit', onSearch);
+// const searchFormEl = document.querySelector('.search-form');
+// console.log(searchFormEl);
+// searchFormEl.addEventListener('submit', onSearch);
 
-async function onSearch(event) {
-  event.preventDefault();
-  console.log(event);
-  const query = event.target.elements.query.value.trim();
+// async function onSearch(event) {
+//   event.preventDefault();
+//   console.log(event);
+//   const query = event.target.elements.query.value.trim();
+//   if (query === '') return;
 
-  if (query === '') return;
+//   fetchApi.page = 1;
+//   fetchApi.searchQuery = query;
 
-  fetchApi.page = 1;
-  fetchApi.searchQuery = query;
+//   resetPagination(40);
 
-  resetPagination();
+//   try {
+//     const response = await fetchApi.fetchMovies();
+//     const films = response.results;
 
-  try {
-    const response = await fetchApi.fetchMovies();
-    const films = response.results;
+//     if (films.length === 0) {
+//       return;
+//     }
 
-    if (films.length === 0) {
-      return;
-    }
+//     const galleryEl = document.querySelector('.movieList');
+//     galleryEl.innerHTML = '';
+//     markupMovies(films);
 
-    const galleryEl = document.querySelector('.movieList');
-    galleryEl.innerHTML = '';
-    markupMovies(films);
-
-    searchFormEl.reset();
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     searchFormEl.reset();
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
