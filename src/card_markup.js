@@ -3,7 +3,7 @@ import { findGenresOfMovie } from './ganres';
 import img from './images/film_poster_not_found.jpg';
 import styles from './css/movie-cards.css';
 
-export function markupMovies(movies) {
+export function markupMovies(movies, insertedItem) {
   const markup = movies
     .map(data => {
       const { poster_path, title, genre_ids, release_date, id } = data;
@@ -33,5 +33,5 @@ export function markupMovies(movies) {
         </div>`;
     })
     .join('');
-  galleryEl.insertAdjacentHTML('beforeend', markup);
+  insertedItem.insertAdjacentHTML('beforeend', markup);
 }
