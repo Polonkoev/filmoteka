@@ -5,4 +5,4 @@ import './getTrendMovies';
 import './js/modal-window';
 import './watched';
 import './arrowup.js';
-
+import './queued';
