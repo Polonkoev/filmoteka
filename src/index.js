@@ -6,3 +6,4 @@ import './js/modal-window';
 import './watched';
 import './arrowup.js';
 import './queued';
+import './spiner/spiner.js'
