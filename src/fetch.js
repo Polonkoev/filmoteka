@@ -6,6 +6,15 @@ export default class ApiService {
     this.page = opt.page;
     this.key = 'api_key=894a5fcb5eb3af426933275e70f0cd83';
   }
+
+  async fetchMovies() {
+    if (this.searchQuery === '') {
+      return await this.fetchTrendMovies();
+    } else {
+      return await this.fetchByKeyWord();
+    }
+  }
+
   // трендовые фильмы //
   async fetchTrendMovies() {
     try {
@@ -27,3 +36,7 @@ export default class ApiService {
     }
   }
 }
+
+export const fetchApi = new ApiService({
+  page: 1,
+});

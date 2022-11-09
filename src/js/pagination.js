@@ -1,5 +1,5 @@
 import Pagination from 'tui-pagination';
-import ApiService from '../fetch';
+import { fetchApi } from '../fetch';
 import { markupMovies } from '../card_markup';
 
 const container = document.getElementById('tui-pagination-container');
@@ -14,10 +14,7 @@ const options = {
 };
 const pagination = new Pagination(container, options);
 
-const fetchApi = new ApiService({
-  page: 1
-});
-fetchApi.fetchTrendMovies().then(handleSucces).catch(handleError);
+fetchApi.fetchMovies().then(handleSucces).catch(handleError);
 
 function handleSucces(data) {
   const movies = data.results;
@@ -29,11 +26,13 @@ function handleError(error) {
   console.error(error);
 }
 
-pagination.on('afterMove', (event) => {
+pagination.on('afterMove', event => {
   const galleryEl = document.querySelector('.movieList');
   galleryEl.innerHTML = '';
-  const fetchApi = new ApiService({
-    page: event.page,
-  });
-  fetchApi.fetchTrendMovies().then(handleSucces).catch(handleError);
-})
+  fetchApi.page = event.page;
+  fetchApi.fetchMovies().then(handleSucces).catch(handleError);
+});
+
+export function resetPagination() {
+  pagination.reset();
+}
