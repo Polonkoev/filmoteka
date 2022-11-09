@@ -57,5 +57,10 @@ export function clickOnDeleteWatchedBtn(e) {
     const newDataParsed = JSON.parse(newdData);
     watchedList.innerHTML = '';
     markupMovies(newDataParsed, watchedList);
+
+    if (newDataParsed.length === 0) {
+      const plug = document.querySelector('.no-movie');
+      plug.style.display = 'block';
+    }
   }
 }
