@@ -7,3 +7,4 @@ import './arrow-up.js';
 import './queued';
 import './search-by-word';
 import './pagination';
+import './about-modal';
