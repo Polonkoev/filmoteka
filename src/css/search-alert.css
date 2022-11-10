@@ -1,0 +1,10 @@
+.search-alert {
+color: #ff001b;
+justify-content: center;
+margin-top: 20px;
+font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+display: flex;
+}
