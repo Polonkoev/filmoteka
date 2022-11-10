@@ -37,8 +37,8 @@ export function clickOnWatchedBtn(e) {
     watchedList.innerHTML = '';
     markupMovies(newDataParsed, watchedList);
 
-    const plug = document.querySelector('.no-movie');
-    plug.style.display = 'none';
+    const plug = document.querySelectorAll('.no-movie');
+    plug.forEach(el => (el.style.display = 'none'));
   }
 }
 
@@ -62,8 +62,8 @@ export function clickOnDeleteWatchedBtn(e) {
     markupMovies(newDataParsed, watchedList);
 
     if (newDataParsed.length === 0) {
-      const plug = document.querySelector('.no-movie');
-      plug.style.display = 'block';
+      const plug = document.querySelectorAll('.no-movie');
+      plug.forEach(el => (el.style.display = 'block'));
     }
   }
 }

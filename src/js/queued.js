@@ -36,9 +36,8 @@ export function clickOnQueuedBtn(e) {
     const newDataParsed = JSON.parse(newdData);
     queuedList.innerHTML = '';
     markupMovies(newDataParsed, queuedList);
-
-    const plug = document.querySelector('.no-movie');
-    plug.style.display = 'none';
+    const plug = document.querySelectorAll('.no-movie');
+    plug.forEach(el => (el.style.display = 'none'));
   }
 }
 
@@ -62,8 +61,8 @@ export function clickOnDeleteQueuedBtn(e) {
     markupMovies(newDataParsed, queuedList);
 
     if (newDataParsed.length === 0) {
-      const plug = document.querySelector('.no-movie');
-      plug.style.display = 'block';
+      const plug = document.querySelectorAll('.no-movie');
+      plug.forEach(el => (el.style.display = 'block'));
     }
   }
 }
