@@ -1,1 +1,0 @@
-{"mappings":"ACAA","sources":["index.e6edc2c5.css","src/css/style.css"],"sourcesContent":[".visually-hidden {\n  opacity: 0;\n  pointer-events: none;\n  visibility: hidden;\n}\n\n/*# sourceMappingURL=index.e6edc2c5.css.map */\n",".visually-hidden {\n  opacity: 0;\n  pointer-events: none;\n  visibility: hidden;\n}\n\n"],"names":[],"version":3,"file":"index.e6edc2c5.css.map"}
