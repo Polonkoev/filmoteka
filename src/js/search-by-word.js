@@ -2,7 +2,7 @@ import { fetchApi } from './fetch';
 import { markupMovies } from './card-markup';
 
 
-//import { resetPagination } from './pagination.js';
+import { resetPagination } from './pagination.js';
 import Notiflix from 'notiflix';
 
 const searchFormEl = document.querySelector('.search-form');
