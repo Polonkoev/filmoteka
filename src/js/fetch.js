@@ -38,14 +38,5 @@ export default class ApiService {
 }
 
 export const fetchApi = new ApiService({
-  page: reloadPage(),
+  page: 1,
 });
-
-export function reloadPage() {
-  const page = localStorage.getItem('page');
-  if (page) {
-    return Number(page);
-  } else {
-    return 1;
-  }
-}
