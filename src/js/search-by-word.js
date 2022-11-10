@@ -4,7 +4,7 @@ import { resetPagination } from './pagination';
 import Notiflix from 'notiflix';
 
 const searchFormEl = document.querySelector('.search-form');
-searchFormEl.addEventListener('submit', onSearch);
+if(searchFormEl) searchFormEl.addEventListener('submit', onSearch);
 
 async function onSearch(event) {
   event.preventDefault();
