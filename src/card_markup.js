@@ -23,14 +23,15 @@ export function markupMovies(movies) {
             </li>`;
       }
       return `
-        <div class ="movieCard" id="${id}">
+        <li class="movieCard" id="${id}">
         <img class ="movieCard__img" src="${img} alt="${title.toUpperCase()}" />
-        <p class ="movieCard__title">${title} <br/>
-        <span class ="movieCard__info">${findGenresOfMovie(
+        <div class="card_wrap">
+        <p class ="movieCard__title">${title.toUpperCase()} <br/>
+        <p class ="movieCard__info"><span>${findGenresOfMovie(
           genre_ids
         )} | ${date}</span>
         </p>
-        </div>`;
+        </div></li>`;
     })
     .join('');
   galleryEl.insertAdjacentHTML('beforeend', markup);
