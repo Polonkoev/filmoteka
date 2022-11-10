@@ -1,4 +1,4 @@
-import { findGenresOfMovie } from '../ganres';
+import { findGenresOfMovie } from './ganres';
 
 const movieList = document.querySelector('.movieList');
 const overlay = document.querySelector('.overlay');
@@ -53,7 +53,7 @@ function openModal(e) {
     });
 
     const movieData = JSON.parse(movie.dataset.movie);
-    console.log(movieData);
+
     cardContent.innerHTML = movieData.overview;
     imgCard.src = 'https://image.tmdb.org/t/p/w500' + movieData.poster_path;
     cardTitle.innerHTML = movieData.title;

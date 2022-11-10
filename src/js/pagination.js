@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
-import { fetchApi } from '../fetch';
-import { markupMovies } from '../card_markup';
+import { fetchApi } from './fetch';
+import { markupMovies } from './card-markup';
 
 const container = document.getElementById('tui-pagination-container');
 const options = {
@@ -18,7 +18,6 @@ fetchApi.fetchMovies().then(handleSucces).catch(handleError);
 
 function handleSucces(data) {
   const movies = data.results;
-  console.log(movies);
   markupMovies(movies);
 }
 

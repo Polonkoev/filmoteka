@@ -1,11 +1,7 @@
-import './arrowup.js';
+import './arrow-up.js';
 
-import './arrowup.js';
-
-import { markupMovies } from './card_markup';
-import * as modal from './js/modal-window.js';
+import { markupMovies } from './card-markup';
 import { clickOnQueuedBtn, clickOnDeleteQueuedBtn } from './queued';
-import { clickOnWatchedBtn, clickOnDeleteWatchedBtn } from './watched';
 
 const queuedList = document.querySelector('.queued-list');
 const queuedEl = document.querySelector('#addToQueuedBtn');
@@ -15,7 +11,6 @@ const plug = document.querySelector('.no-movie');
 const data = localStorage.getItem('queued');
 const dataParsed = JSON.parse(data);
 
-console.log(dataParsed);
 
 if (!dataParsed || dataParsed.length === 0) {
   plug.style.display = 'block';
