@@ -1,14 +1,20 @@
-(() => {
-  const refs = {
-    openModalBtn: document.querySelector('.modal-open'),
-    closeModalBtn: document.querySelector('.close-modal'),
-    modal: document.querySelector('.backdrop'),
-  };
+const span = document.querySelector('.modal-open');
+const backdrop = document.querySelector('.backdrop');
+const closeBackdrop = document.querySelector('.close-modal');
+const backdropBg = document.querySelector('.backdrop-bg');
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+span.addEventListener('click', event => {
+  backdrop.classList.remove('is-hidden');
+  window.addEventListener('keydown', function mdClose(e) {
+    if (e.keyCode !== 27) return;
+    modalClose();
+    this.removeEventListener('keydown', mdClose);
+  });
+});
 
-  function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
-  }
-})();
+closeBackdrop.addEventListener('click', modalClose);
+backdropBg.addEventListener('click', modalClose);
+
+function modalClose() {
+  backdrop.classList.add('is-hidden');
+}
