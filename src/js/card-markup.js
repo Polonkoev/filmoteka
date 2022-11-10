@@ -6,11 +6,11 @@ export function markupMovies(movies) {
   const markup = movies
     .map(data => {
       const { poster_path, title, genre_ids, release_date, id } = data;
-      const movieData = JSON.stringify(data);
+      const movieData = encodeURIComponent(JSON.stringify(data))
       const date = new Date(release_date).getFullYear();
       if (poster_path) {
         return `
-            <li class="movieCard" id="${id}" data-movie='${movieData}'>
+            <li class="movieCard" id="${id}" data-movie=\"${movieData}\">
             <img class="movieCard__img" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}" loading="lazy" />
             <div class="card_wrap">
             <p class="movieCard__title">${title.toUpperCase()} <br />
@@ -22,7 +22,7 @@ export function markupMovies(movies) {
             </li>`;
       }
       return `
-        <li class="movieCard" id="${id}">
+        <li class="movieCard" id="${id}" data-movie=\"${movieData}\">
         <img class ="movieCard__img" src="${img}" alt="${title.toUpperCase()}" />
         <div class="card_wrap">
         <p class ="movieCard__title">${title.toUpperCase()} <br/>

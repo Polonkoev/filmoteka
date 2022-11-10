@@ -8,7 +8,7 @@ queuedEl.addEventListener('click', clickOnQueuedBtn);
 
 export function clickOnQueuedBtn(e) {
   const movie = e.target.closest('.card-block');
-  const movieData = movie.dataset.movie;
+  const movieData = decodeURIComponent(movie.dataset.movie);
   const data = localStorage.getItem('queued');
   const dataParsed = JSON.parse(data);
   queuedEl.style.display = 'none';
@@ -46,7 +46,7 @@ deleteQEl.addEventListener('click', clickOnDeleteQueuedBtn);
 
 export function clickOnDeleteQueuedBtn(e) {
   const movie = e.target.closest('.card-block');
-  const movieData = movie.dataset.movie;
+  const movieData = decodeURIComponent(movie.dataset.movie);
   const data = localStorage.getItem('queued');
   const dataParsed = JSON.parse(data);
   queuedEl.style.display = 'block';

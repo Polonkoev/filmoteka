@@ -41,8 +41,7 @@ export function resetPagination() {
 }
 
 const currentPage = document.querySelector('.tui-pagination');
-
-currentPage.addEventListener('click', onPageClick);
+if(currentPage) currentPage.addEventListener('click', onPageClick);
 
 function onPageClick(event) {
   const page = event.target.textContent;
