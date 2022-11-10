@@ -8,7 +8,7 @@ watchedEl.addEventListener('click', clickOnWatchedBtn);
 
 export function clickOnWatchedBtn(e) {
   const movie = e.target.closest('.card-block');
-  const movieData = movie.dataset.movie;
+  const movieData = decodeURIComponent(movie.dataset.movie);
   const data = localStorage.getItem('watched');
   const dataParsed = JSON.parse(data);
   watchedEl.style.display = 'none';
@@ -46,7 +46,7 @@ deleteEl.addEventListener('click', clickOnDeleteWatchedBtn);
 
 export function clickOnDeleteWatchedBtn(e) {
   const movie = e.target.closest('.card-block');
-  const movieData = movie.dataset.movie;
+  const movieData = decodeURIComponent(movie.dataset.movie);
   const data = localStorage.getItem('watched');
   const dataParsed = JSON.parse(data);
   watchedEl.style.display = 'block';

@@ -1,4 +1,6 @@
 import { findGenresOfMovie } from './ganres';
+import img from '../images/film_poster_not_found.jpg';
+import {fetchApi} from "./fetch";
 
 const movieList = document.querySelector('.movieList');
 const overlay = document.querySelector('.overlay');
@@ -65,29 +67,30 @@ function openModal(e) {
       modalClose();
       this.removeEventListener('keydown', mdClose);
     });
-
-    const movieData = JSON.parse(movie.dataset.movie);
-    if(movieData.overview.length > 151) {
+    const movieData = JSON.parse(decodeURIComponent(movie.dataset.movie));
+    if(!movieData.overview || movieData.overview.length <= 0) {
+      cardContent.innerHTML = "Description for this movie has not yet been added."
+      readMore.style.display = 'none'
+    } else if(movieData.overview.length > 151) {
       const arr1 = movieData.overview.slice(0, 150)
       const arr2 = movieData.overview.slice(150)
       readMore.style.display = 'inline'
       cardContent.innerHTML = arr1;
       modalLess.innerHTML = arr2;
-      console.log(arr2)
     } else {
       cardContent.innerHTML = movieData.overview;
       readMore.style.display = 'none'
     }
-    
-    imgCard.src = 'https://image.tmdb.org/t/p/w500' + movieData.poster_path;
+
+    imgCard.src = movieData.poster_path ? 'https://image.tmdb.org/t/p/w500' + movieData.poster_path : img;
     cardTitle.innerHTML = movieData.title;
     cardVote.innerHTML = movieData.vote_average;
     cardVotes.innerHTML = movieData.vote_count;
     cardPopularity.innerHTML = movieData.popularity;
     cardOriginal.innerHTML = movieData.original_title;
-    cardGenre.innerHTML = findGenresOfMovie(movieData.genre_ids);
+    cardGenre.innerHTML = fetchApi.findGenresById(movieData.genre_ids)
 
-    cardBlock.dataset.movie = movie.dataset.movie;
+    cardBlock.dataset.movie = movie.dataset.movie;/// --- КТО это добавил и зачем?????
 
     const dataWatched = localStorage.getItem('watched');
     const dataQueued = localStorage.getItem('queued');

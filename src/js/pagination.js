@@ -39,3 +39,13 @@ function handleError(error) {
 export function resetPagination() {
   pagination.reset();
 }
+
+
+const currentPage = document.querySelector('.tui-pagination');
+if(currentPage) currentPage.addEventListener('click', onPageClick);
+
+function onPageClick(event) {
+  const page = event.target.textContent;
+  localStorage.setItem('page', page);
+  options.page = event.target.textContent;
+}
