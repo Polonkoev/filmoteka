@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default class ApiService {
   constructor(opt) {
-    this.searchQuery = '';
+    this.searchQuery = opt.searchQuery;
     this.page = opt.page;
     this.key = 'api_key=894a5fcb5eb3af426933275e70f0cd83';
   }
