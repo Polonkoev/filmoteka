@@ -13,7 +13,7 @@ function refreshTrandsFoo (){
 }
 
 refreshTrands.addEventListener('click', refreshTrandsFoo)
-homeBtn.addEventListener('click', refreshTrandsFoo)
+if(homeBtn) homeBtn.addEventListener('click', refreshTrandsFoo)
 
 export default class ApiService {
   constructor(opt) {
