@@ -1,4 +1,4 @@
-import { findGenresOfMovie } from '../ganres';
+import { findGenresOfMovie } from './ganres';
 
 const movieList = document.querySelector('.movieList');
 const overlay = document.querySelector('.overlay');

@@ -1,11 +1,7 @@
-import './arrowup.js';
+import './arrow-up.js';
 
-import './arrowup.js';
-
-import { markupMovies } from './card_markup';
-import * as modal from './js/modal-window.js';
+import { markupMovies } from './card-markup';
 import { clickOnWatchedBtn, clickOnDeleteWatchedBtn } from './watched';
-import { clickOnQueuedBtn, clickOnDeleteQueuedBtn } from './queued';
 
 const watchedList = document.querySelector('.watched-list');
 const watchedEl = document.querySelector('#addToWatchedBtn');

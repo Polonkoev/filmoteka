@@ -1,6 +1,6 @@
 import { fetchApi } from './fetch';
-import { markupMovies } from './card_markup';
-import { resetPagination } from './js/pagination';
+import { markupMovies } from './card-markup';
+import { resetPagination } from './pagination';
 import Notiflix from 'notiflix';
 
 const searchFormEl = document.querySelector('.search-form');

@@ -1,4 +1,4 @@
-import { markupMovies } from './card_markup';
+import { markupMovies } from './card-markup';
 
 const queuedEl = document.querySelector('#addToQueuedBtn');
 const deleteQEl = document.querySelector('#removeFromQueuedBtn');

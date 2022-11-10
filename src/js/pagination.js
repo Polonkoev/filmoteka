@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
-import { fetchApi } from '../fetch';
-import { markupMovies } from '../card_markup';
+import { fetchApi } from './fetch';
+import { markupMovies } from './card-markup';
 
 const container = document.getElementById('tui-pagination-container');
 const options = {
