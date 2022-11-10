@@ -1,5 +1,5 @@
 import Pagination from 'tui-pagination';
-import { fetchApi } from './fetch';
+import { fetchApi, reloadPage } from './fetch';
 import { markupMovies } from './card-markup';
 
 const container = document.getElementById('tui-pagination-container');
@@ -9,12 +9,12 @@ const options = {
   itemsPerPage: 20,
   visiblePages: 5,
   centerAlign: true,
-  page: 1,
+  page: reloadPage(),
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
 };
 let pagination;
-if(container) {
+if (container) {
   pagination = new Pagination(container, options);
 
   pagination.on('afterMove', event => {
@@ -36,7 +36,16 @@ function handleError(error) {
   console.error(error);
 }
 
-
 export function resetPagination() {
   pagination.reset();
+}
+
+const currentPage = document.querySelector('.tui-pagination');
+
+currentPage.addEventListener('click', onPageClick);
+
+function onPageClick(event) {
+  const page = event.target.textContent;
+  localStorage.setItem('page', page);
+  options.page = event.target.textContent;
 }
