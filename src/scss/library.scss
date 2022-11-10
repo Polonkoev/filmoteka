@@ -1,0 +1,18 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import './about-modal';
+@import './common';
+@import './container';
+@import './footer';
+@import './header';
+@import './library-header';
+@import './modal-window';
+@import './movie-cards';
+@import './pagination';
+
+
+.visually-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}

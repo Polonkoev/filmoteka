@@ -23,7 +23,7 @@ export function markupMovies(movies) {
       }
       return `
         <li class="movieCard" id="${id}">
-        <img class ="movieCard__img" src="${img} alt="${title.toUpperCase()}" />
+        <img class ="movieCard__img" src="${img}" alt="${title.toUpperCase()}" />
         <div class="card_wrap">
         <p class ="movieCard__title">${title.toUpperCase()} <br/>
         <p class ="movieCard__info"><span>${findGenresOfMovie(
