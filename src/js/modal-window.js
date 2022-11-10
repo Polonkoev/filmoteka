@@ -12,11 +12,14 @@ const cardPopularity = document.querySelector('#modal-popularity');
 const cardOriginal = document.querySelector('#modal-original');
 const cardGenre = document.querySelector('#modal-genre');
 const cardContent = document.querySelector('#modal-content');
+const modalLess = document.querySelector('#modal-less');
 const cardBlock = document.querySelector('.card-block');
 const watchedEl = document.querySelector('#addToWatchedBtn');
 const deleteEl = document.querySelector('.card-btn-delete');
 const queuedEl = document.querySelector('#addToQueuedBtn');
 const deleteQEl = document.querySelector('.card-btn-delete-queued');
+const readMore = document.querySelector('.read-more');
+const textContent = document.querySelector('.text-content');
 
 export {
   movieList,
@@ -41,9 +44,20 @@ export {
 };
 
 movieList.addEventListener('click', openModal);
-
+readMore.addEventListener('click', function(){
+  modalLess.classList.toggle('active');
+  readMore.classList.toggle('active');
+  if(modalLess.classList.contains('active')) {
+    readMore.innerHTML = "Read less"
+  } else {
+    readMore.innerHTML = "Read more"
+  }
+})
 function openModal(e) {
   const movie = e.target.closest('.movieCard');
+  readMore.innerHTML = "Read more";
+  modalLess.classList.remove('active');
+  readMore.classList.remove('active');
   if (movie) {
     overlay.classList.remove('is-hidden');
     window.addEventListener('keydown', function mdClose(e) {
@@ -53,8 +67,18 @@ function openModal(e) {
     });
 
     const movieData = JSON.parse(movie.dataset.movie);
-
-    cardContent.innerHTML = movieData.overview;
+    if(movieData.overview.length > 151) {
+      const arr1 = movieData.overview.slice(0, 150)
+      const arr2 = movieData.overview.slice(150)
+      readMore.style.display = 'inline'
+      cardContent.innerHTML = arr1;
+      modalLess.innerHTML = arr2;
+      console.log(arr2)
+    } else {
+      cardContent.innerHTML = movieData.overview;
+      readMore.style.display = 'none'
+    }
+    
     imgCard.src = 'https://image.tmdb.org/t/p/w500' + movieData.poster_path;
     cardTitle.innerHTML = movieData.title;
     cardVote.innerHTML = movieData.vote_average;

@@ -8,6 +8,32 @@
   z-index: 500;
   margin: 0 auto;
 }
+.modal-less {
+  display: none;
+}
+.modal-less.active {
+  display: inline;
+}
+.read-more {
+  color: #ff6801;
+  cursor: pointer;
+  background-color: #fff;
+  user-select: none;
+  &:hover {
+    color: #d55b0ad5;
+  }
+  &:before {
+    content: '...';
+    margin-right: 10px;
+    color: #000;
+  }
+  &.active {
+    &:before {
+      content: '';
+      display: block;
+    }
+  }
+}
 
 .modal-close {
   position: absolute;
@@ -121,6 +147,7 @@
 .text-content {
   font-size: 12px;
   line-height: 1.66;
+  overflow: hidden;
 }
 
 .card-button {
