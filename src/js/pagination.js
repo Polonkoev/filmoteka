@@ -18,7 +18,6 @@ fetchApi.fetchMovies().then(handleSucces).catch(handleError);
 
 function handleSucces(data) {
   const movies = data.results;
-  console.log(movies);
   markupMovies(movies);
 }
 

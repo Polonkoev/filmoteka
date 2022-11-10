@@ -22,7 +22,7 @@ export default class ApiService {
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
   //поиск по ключевому слову //
@@ -32,7 +32,7 @@ export default class ApiService {
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 }

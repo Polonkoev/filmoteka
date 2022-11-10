@@ -4,12 +4,10 @@ import { resetPagination } from './pagination';
 import Notiflix from 'notiflix';
 
 const searchFormEl = document.querySelector('.search-form');
-console.log(searchFormEl);
 searchFormEl.addEventListener('submit', onSearch);
 
 async function onSearch(event) {
   event.preventDefault();
-  console.log(event);
   const query = event.target.elements.query.value.trim();
 
   if (query === '') return;
@@ -36,6 +34,6 @@ async function onSearch(event) {
 
     searchFormEl.reset();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

@@ -11,7 +11,6 @@ const plug = document.querySelector('.no-movie');
 const data = localStorage.getItem('queued');
 const dataParsed = JSON.parse(data);
 
-console.log(dataParsed);
 
 if (!dataParsed || dataParsed.length === 0) {
   plug.style.display = 'block';
