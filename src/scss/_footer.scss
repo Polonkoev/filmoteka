@@ -32,6 +32,13 @@ main {
 
 .modal-open {
   border-bottom: 1px solid;
+  cursor: pointer;
+}
+.modal-open:hover,
+.modal-open:focus {
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  transform: scale(1.03);
 }
 
 @media screen and (min-width: 768px) {

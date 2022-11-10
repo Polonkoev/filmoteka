@@ -9,7 +9,7 @@ const options = {
   itemsPerPage: 20,
   visiblePages: 5,
   centerAlign: true,
-  page: reloadPage(),
+  page: Number(localStorage.getItem('page') || 1),
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
 };
@@ -39,6 +39,7 @@ function handleError(error) {
 export function resetPagination() {
   pagination.reset();
 }
+
 
 const currentPage = document.querySelector('.tui-pagination');
 if(currentPage) currentPage.addEventListener('click', onPageClick);

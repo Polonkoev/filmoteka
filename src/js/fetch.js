@@ -1,8 +1,23 @@
 import axios from 'axios';
 
+const refreshTrands = document.querySelector('.logo')
+const homeBtn = document.getElementById('home')
+
+
+
+
+function refreshTrandsFoo (){
+  localStorage.removeItem('page')
+  localStorage.removeItem('searchQuery')
+  fetchMovies()
+}
+
+refreshTrands.addEventListener('click', refreshTrandsFoo)
+homeBtn.addEventListener('click', refreshTrandsFoo)
+
 export default class ApiService {
   constructor(opt) {
-    this.searchQuery = '';
+    this.searchQuery = opt.searchQuery;
     this.page = opt.page;
     this.key = 'api_key=894a5fcb5eb3af426933275e70f0cd83';
     this.genres = [];
@@ -25,6 +40,9 @@ export default class ApiService {
   }
 
   async fetchMovies() {
+    localStorage.setItem('searchQuery', this.searchQuery);
+    localStorage.setItem('page', this.page);
+
     if (this.searchQuery === '') {
       return await this.fetchTrendMovies();
     } else {
@@ -55,14 +73,6 @@ export default class ApiService {
 }
 
 export const fetchApi = new ApiService({
-  page: reloadPage(),
+  page: Number(localStorage.getItem('page') || 1),
+  searchQuery: localStorage.getItem('searchQuery') || '',
 });
-
-export function reloadPage() {
-  const page = localStorage.getItem('page');
-  if (page) {
-    return Number(page);
-  } else {
-    return 1;
-  }
-}
