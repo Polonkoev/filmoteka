@@ -1,5 +1,4 @@
 import { markupMovies } from './card-markup';
-import * as modal from './modal-window.js';
 
 const watchedEl = document.querySelector('#addToWatchedBtn');
 const deleteEl = document.querySelector('.card-btn-delete');

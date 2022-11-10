@@ -23,9 +23,9 @@ if(container) {
     fetchApi.page = event.page;
     fetchApi.fetchMovies().then(handleSucces).catch(handleError);
   });
-}
 
-fetchApi.fetchMovies().then(handleSucces).catch(handleError);
+  fetchApi.fetchMovies().then(handleSucces).catch(handleError);
+}
 
 function handleSucces(data) {
   const movies = data.results;
