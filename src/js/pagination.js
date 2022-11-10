@@ -3,6 +3,7 @@ import { fetchApi } from './fetch';
 import { markupMovies } from './card-markup';
 
 const container = document.getElementById('tui-pagination-container');
+
 const options = {
   totalItems: 20000,
   itemsPerPage: 20,
@@ -12,7 +13,17 @@ const options = {
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
 };
-const pagination = new Pagination(container, options);
+let pagination;
+if(container) {
+  pagination = new Pagination(container, options);
+
+  pagination.on('afterMove', event => {
+    const galleryEl = document.querySelector('.movieList');
+    galleryEl.innerHTML = '';
+    fetchApi.page = event.page;
+    fetchApi.fetchMovies().then(handleSucces).catch(handleError);
+  });
+}
 
 fetchApi.fetchMovies().then(handleSucces).catch(handleError);
 
@@ -25,12 +36,6 @@ function handleError(error) {
   console.error(error);
 }
 
-pagination.on('afterMove', event => {
-  const galleryEl = document.querySelector('.movieList');
-  galleryEl.innerHTML = '';
-  fetchApi.page = event.page;
-  fetchApi.fetchMovies().then(handleSucces).catch(handleError);
-});
 
 export function resetPagination() {
   pagination.reset();
