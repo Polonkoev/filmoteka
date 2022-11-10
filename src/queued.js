@@ -13,6 +13,7 @@ export function clickOnQueuedBtn(e) {
   const dataParsed = JSON.parse(data);
   queuedEl.style.display = 'none';
   deleteQEl.style.display = 'block';
+
   let array;
   if (data) {
     const find = dataParsed.find(el => el.id == JSON.parse(movieData).id);
@@ -35,6 +36,9 @@ export function clickOnQueuedBtn(e) {
     const newDataParsed = JSON.parse(newdData);
     queuedList.innerHTML = '';
     markupMovies(newDataParsed, queuedList);
+
+    const plug = document.querySelector('.no-movie');
+    plug.style.display = 'none';
   }
 }
 
