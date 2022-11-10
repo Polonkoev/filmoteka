@@ -1,6 +1,7 @@
 import Pagination from 'tui-pagination';
 import { fetchApi } from './fetch';
 import { markupMovies } from './card-markup';
+import Notiflix from 'notiflix';
 
 const galleryEl = document.querySelector('.movieList');
 
@@ -48,7 +49,7 @@ pagination.on('afterMove', event => {
 });
 
 const searchFormEl = document.querySelector('.search-form');
-searchFormEl.addEventListener('submit', onSearch);
+if(searchFormEl) searchFormEl.addEventListener('submit', onSearch);
 
 async function onSearch(event) {
   event.preventDefault();
@@ -65,6 +66,9 @@ async function onSearch(event) {
     console.log('total-item:', response.total_results);
     localStorage.removeItem('page');
     if (films.length === 0) {
+      Notiflix.Notify.init({ width: '550px', position: 'right-top' });
+      Notiflix.Notify.failure('Sorry, there is no movie with that name');
+      searchFormEl.reset();
       return;
     }
 
