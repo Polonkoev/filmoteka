@@ -13,7 +13,7 @@ const options = {
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
 };
-let pagination;
+export let pagination;
 if (container) {
   pagination = new Pagination(container, options);
 
@@ -40,9 +40,8 @@ export function resetPagination() {
   pagination.reset();
 }
 
-
 const currentPage = document.querySelector('.tui-pagination');
-if(currentPage) currentPage.addEventListener('click', onPageClick);
+if (currentPage) currentPage.addEventListener('click', onPageClick);
 
 function onPageClick(event) {
   const page = event.target.textContent;
