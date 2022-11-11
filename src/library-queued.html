@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmoteka</title>
-    <link rel="stylesheet" href="./scss/library.scss">
+    <link rel="stylesheet" href="./scss/library.scss" />
   </head>
   <body>
     <include src="./partials/library-header.html"></include>
     <main class="content">
       <section class="movie-queued container movieGallery">
         <h1 class="visually-hidden">Queued films</h1>
-        <p class="no-movie">No movie added.</p>
+        <!-- <p class="no-movie">No movie added.</p> -->
+        <div class="no-movie-wrapper">
+          <iframe class="no-movie" src="./images/no-movie.svg" frameborder="0">
+          </iframe>
+        </div>
+        <p class="no-movie-text no-movie">No movie added.</p>
         <ul class="queued-list movieList"></ul>
       </section>
     </main>
@@ -19,7 +24,7 @@
     <include src="./partials/footer.html"></include>
     <include src="./partials/modal-window.html"></include>
     <include src="./partials/about-modal.html"></include>
-    
+
     <script type="module" src="./js/index.js"></script>
     <script type="module" src="./js/library-for-queued.js"></script>
   </body>

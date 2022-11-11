@@ -10,9 +10,25 @@
 @import './movie-cards';
 @import './pagination';
 
-
 .visually-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+}
+
+// .no-movie-wrapper {
+//   width: 200px;
+//   margin: 0 auto;
+// }
+
+.no-movie {
+  display: block;
+  margin: 0 auto;
+}
+
+.no-movie-text {
+  margin-top: 10px;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
 }

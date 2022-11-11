@@ -6,17 +6,16 @@ import { clickOnQueuedBtn, clickOnDeleteQueuedBtn } from './queued';
 const queuedList = document.querySelector('.queued-list');
 const queuedEl = document.querySelector('#addToQueuedBtn');
 const deleteQEl = document.querySelector('#removeFromQueuedBtn');
-const plug = document.querySelector('.no-movie');
+const plug = document.querySelectorAll('.no-movie');
 
 const data = localStorage.getItem('queued');
 const dataParsed = JSON.parse(data);
 
-
 if (!dataParsed || dataParsed.length === 0) {
-  plug.style.display = 'block';
+  plug.forEach(el => (el.style.display = 'block'));
 } else {
   markupMovies(dataParsed, queuedList);
-  plug.style.display = 'none';
+  plug.forEach(el => (el.style.display = 'none'));
 }
 
 queuedEl.addEventListener('click', clickOnQueuedBtn);
