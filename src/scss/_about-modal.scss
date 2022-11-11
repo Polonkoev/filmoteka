@@ -1,25 +1,21 @@
 .is-hidden {
   display: none;
 }
-
 .modal {
-  width: 280px;
+  width: 270px;
   font-family: Roboto, sans-serif;
   font-weight: 500;
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 4px;
   padding: 8px;
   z-index: 4;
+  margin: 5% auto;
 }
-
 .close-modal {
-  position: fixed;
-  top: 8px;
-  right: 8px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
   stroke: #000;
   cursor: pointer;
 }
@@ -30,11 +26,12 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 16px;
   line-height: 1.16;
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
+  color: #545454;
 }
 
 .backdrop {
@@ -44,26 +41,19 @@
   right: 0;
   bottom: 0;
   z-index: 3;
+  overflow: scroll;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .backdrop-bg {
-  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 3;
-  cursor: pointer;
-}
-
-.backdrop-scroll {
-  overflow: auto;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 40px;
   height: 100vh;
+  cursor: pointer;
 }
 
 .team-list {
@@ -114,16 +104,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .b-scroll {
-    padding-left: 32px;
-    padding-right: 32px;
-    display: flex;
-    align-items: center;
-  }
-
-  .modal {
-    width: 704px;
+   .modal {
+    width: 660px;
     padding: 12px;
+  }
+   .title {
+    font-size: 24px;
   }
 }
 
@@ -131,5 +117,8 @@
   .modal {
     width: 1220px;
     padding: 20px;
+  }
+  .title {
+    font-size: 30px;
   }
 }
