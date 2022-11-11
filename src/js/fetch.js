@@ -9,6 +9,8 @@ const homeBtn = document.getElementById('home')
 function refreshTrandsFoo (){
   localStorage.removeItem('page')
   localStorage.removeItem('searchQuery')
+  sessionStorage.removeItem('page')
+  sessionStorage.removeItem('searchQuery')
   fetchMovies()
 }
 
