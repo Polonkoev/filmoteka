@@ -1,19 +1,16 @@
 import axios from 'axios';
 
-const refreshTrands = document.querySelector('.logo')
-const homeBtn = document.getElementById('home')
+const refreshTrands = document.querySelector('.logo');
+const homeBtn = document.getElementById('home');
 
-
-
-
-function refreshTrandsFoo (){
-  localStorage.removeItem('page')
-  localStorage.removeItem('searchQuery')
-  fetchMovies()
+function refreshTrandsFoo() {
+  localStorage.removeItem('page');
+  localStorage.removeItem('searchQuery');
+  fetchMovies();
 }
 
-refreshTrands.addEventListener('click', refreshTrandsFoo)
-if(homeBtn) homeBtn.addEventListener('click', refreshTrandsFoo)
+refreshTrands.addEventListener('click', refreshTrandsFoo);
+if (homeBtn) homeBtn.addEventListener('click', refreshTrandsFoo);
 
 export default class ApiService {
   constructor(opt) {
@@ -22,7 +19,7 @@ export default class ApiService {
     this.key = 'api_key=894a5fcb5eb3af426933275e70f0cd83';
     this.genres = [];
 
-    this.fetchGenres()
+    this.fetchGenres();
   }
   findGenresById(ids) {
     const arr = ids.flatMap(id => this.genres.filter(item => item.id === id));
@@ -33,10 +30,14 @@ export default class ApiService {
     return movieGenres.join(', ');
   }
   fetchGenres() {
-    axios.get(`https://api.themoviedb.org/3/genre/movie/list?${this.key}&language=en-US`)
-    .then(res => {
-      this.genres = res.data.genres
-    }).catch(error => console.log(error));
+    axios
+      .get(
+        `https://api.themoviedb.org/3/genre/movie/list?${this.key}&language=en-US`
+      )
+      .then(res => {
+        this.genres = res.data.genres;
+      })
+      .catch(error => console.log(error));
   }
 
   async fetchMovies() {

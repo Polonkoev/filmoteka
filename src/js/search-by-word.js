@@ -1,10 +1,10 @@
 import { fetchApi } from './fetch';
 import { markupMovies } from './card-markup';
-import { resetPagination } from './pagination';
+import { resetPagination, pagination } from './pagination';
 import Notiflix from 'notiflix';
 
 const searchFormEl = document.querySelector('.search-form');
-if(searchFormEl) searchFormEl.addEventListener('submit', onSearch);
+if (searchFormEl) searchFormEl.addEventListener('submit', onSearch);
 
 async function onSearch(event) {
   event.preventDefault();
@@ -14,12 +14,18 @@ async function onSearch(event) {
 
   fetchApi.page = 1;
   fetchApi.searchQuery = query;
-
-  resetPagination();
+  fetchApi.totalItems = Number(localStorage.getItem('total'));
 
   try {
     const response = await fetchApi.fetchMovies();
     const films = response.results;
+
+    pagination.reset(response.total_results);
+    fetchApi.page = 1;
+    fetchApi.searchQuery = query;
+    fetchApi.totalItems = Number(localStorage.getItem('total'));
+
+    console.log('total-item:', response.total_results);
 
     if (films.length === 0) {
       Notiflix.Notify.init({ width: '550px', position: 'right-top' });
