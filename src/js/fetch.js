@@ -3,10 +3,15 @@ import axios from 'axios';
 const refreshTrands = document.querySelector('.logo');
 const homeBtn = document.getElementById('home');
 
-function refreshTrandsFoo() {
-  localStorage.removeItem('page');
-  localStorage.removeItem('searchQuery');
-  fetchMovies();
+
+
+
+function refreshTrandsFoo (){
+  localStorage.removeItem('page')
+  localStorage.removeItem('searchQuery')
+  sessionStorage.removeItem('page')
+  sessionStorage.removeItem('searchQuery')
+  fetchMovies()
 }
 
 refreshTrands.addEventListener('click', refreshTrandsFoo);
@@ -41,8 +46,8 @@ export default class ApiService {
   }
 
   async fetchMovies() {
-    localStorage.setItem('searchQuery', this.searchQuery);
-    localStorage.setItem('page', this.page);
+    sessionStorage.setItem('searchQuery', this.searchQuery);
+    sessionStorage.setItem('page', this.page);
 
     if (this.searchQuery === '') {
       return await this.fetchTrendMovies();
