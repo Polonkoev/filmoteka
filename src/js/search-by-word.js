@@ -2,6 +2,7 @@ import { fetchApi } from './fetch';
 import { markupMovies } from './card-markup';
 import { resetPagination } from './pagination';
 import Notiflix from 'notiflix';
+import img from '../images/no_film_found.jpg';
 const galleryEl = document.querySelector('.movieList');
 const searchFormEl = document.querySelector('.search-form');
 
@@ -14,7 +15,7 @@ function renderNoFilm(){
       sessionStorage.removeItem('page');
       sessionStorage.removeItem('searchQuery');
       galleryEl.innerHTML = '';
-      galleryEl.insertAdjacentHTML('afterbegin', "<li><img src='../images/no_film_found.jpg' alt='no film found'></li>")
+      galleryEl.insertAdjacentHTML('afterbegin', `<img class="movieCard__img" src="${img}" alt="no fim found">`)
 }
 
 
