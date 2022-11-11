@@ -42,8 +42,8 @@ export default class ApiService {
   }
 
   async fetchMovies() {
-    localStorage.setItem('searchQuery', this.searchQuery);
-    localStorage.setItem('page', this.page);
+    sessionStorage.setItem('searchQuery', this.searchQuery);
+    sessionStorage.setItem('page', this.page);
 
     if (this.searchQuery === '') {
       return await this.fetchTrendMovies();
